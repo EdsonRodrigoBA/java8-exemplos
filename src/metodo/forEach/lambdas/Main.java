@@ -23,6 +23,7 @@ public class Main {
 		System.out.println();
 		
 		//Exibindo o quadrado de cada numero da lista
+		System.out.println("Imprimindo os dados ao quadrado");
 		realizaOperacao(numeros, (n)-> n * n);
 	}
 
