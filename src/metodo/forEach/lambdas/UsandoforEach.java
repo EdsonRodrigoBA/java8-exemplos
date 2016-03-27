@@ -3,6 +3,7 @@ package metodo.forEach.lambdas;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
+import java.util.stream.Collectors;
 
 public class UsandoforEach {
 
@@ -16,9 +17,17 @@ public class UsandoforEach {
 		usuarios.add(new Usuario("Joao Silva", 19, true));
 		usuarios.add(new Usuario("Telma Santos", 34, false));
 		
+		List<Usuario> maior = usuarios.stream().filter(p -> p.getIdade()> 20).collect(Collectors.toList());
+		maior.forEach(p -> System.out.println(p.toString()));
+		System.out.println("Pessoa Inicia letra E");
+		List<Usuario> inicia = usuarios.stream().filter(u -> u.getNome().startsWith("E")).collect(Collectors.toList());
+		inicia.forEach(u -> System.out.println(u.toString()));
+		
+		
+		
 		//teste01(usuarios);
 		//teste02(usuarios);
-		teste3(usuarios);
+		//teste3(usuarios);
 	}
 	private static void teste3(List<Usuario> usuarios) {
 		//todos os usuarios vão passa a ter o status como true.
